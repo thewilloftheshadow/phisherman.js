@@ -22,12 +22,22 @@ describe("checkDomain", () => {
     }).timeout(15000)
 })
 
-describe("getDomainInfo", async () => {
-    let value = await phish.getDomainInfo("suspicious.test.phisherman.gg")
+describe("getDomainInfo", () => {
+    let value 
     it(`should return a Domain`, async () => {
+        value = await phish.getDomainInfo("suspicious.test.phisherman.gg")
         expect(value).to.be.a(Domain)
     }).timeout(15000)
     it(`should have a status`, async () => {
+        value = await phish.getDomainInfo("suspicious.test.phisherman.gg")
         expect(value.status).to.be.a("string")
+    }).timeout(15000)
+    it(`should have a created`, async () => {
+        value = await phish.getDomainInfo("suspicious.test.phisherman.gg")
+        expect(value.created).to.be.a(Date)
+    }).timeout(15000)
+    it(`should have a verifiedPhish as false`, async () => {
+        value = await phish.getDomainInfo("suspicious.test.phisherman.gg")
+        expect(value.verifiedPhish).to.be(false)
     }).timeout(15000)
 })

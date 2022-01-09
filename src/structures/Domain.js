@@ -26,11 +26,11 @@ class Domain {
         const data = inputData[url]
         this.url = url
         this.status = data.status
-        this.lastChecked = data.lastChecked
+        this.lastChecked = new Date(data.lastChecked)
         this.verifiedPhish = data.verifiedPhish
-        this.created = data.created
-        this.firstSeen = data.firstSeen
-        this.lastSeen = data.lastSeen
+        this.created = data.created ? new Date(data.created) : null
+        this.firstSeen = data.firstSeen ? new Date(data.firstSeen) : null
+        this.lastSeen = data.lastSeen ? new Date(data.lastSeen) : null
         this.targetedBrand = data.targetedBrand
         this.phishCaught = data.phishCaught
         this.phishTankId = data.phishTankId
