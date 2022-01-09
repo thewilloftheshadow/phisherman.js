@@ -1,4 +1,5 @@
 const RequestHandler = require("./RequestHandler")
+const { Domain } = require("./structures")
 
 class Phisherman {
     /**
@@ -30,17 +31,34 @@ class Phisherman {
 
     /**
      * @public
+     * @async
      * @param {string} url The URL to check
      * @returns {boolean} Whether the URL is a phishing site
      */
 
-    checkDomain(url) {
+    async checkDomain(url) {
         if (this.debug) console.debug(`Event: checkDomain\n  - URL: ${url}`)
         if (typeof url !== "string") throw new TypeError("url must be a string")
-        const data = this._request(`/domains/${url}`)
+        const data = await this._request(`/domains/${url}`)
         return data
     }
 
+    /**
+     * @public
+     * @async
+     * @param {string} domain The domain to check
+     * @returns {Domain}
+     */
+
+    async getDomainInfo(domain) {
+        if (this.debug) console.debug(`Event: getDomainInfo\n  - URL: ${url}`)
+        const data = await this._request(`/domains/info/${domain}`)
+
+        console.log(data)
+        let theDomain = new Domain(data, domain)
+        console.log(theDomain)
+        return theDomain
+    }
 
 
     /**
