@@ -1,6 +1,6 @@
 {
     "name": "phisherman.js",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "description": "A node.js wrapper for the Phisherman API",
     "main": "src/index.js",
     "types": "src/index.d.ts",
