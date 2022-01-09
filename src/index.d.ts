@@ -8,7 +8,7 @@ declare module "Phisherman.js" {
         public version: string
         public requestHandler: RequestHandler
         public constructor(token: string, options: PhishermanOptions)
-        public getDomain(url: string): boolean
+        public checkDomain(url: string): boolean
         private _request(endpoint: string, method?: string, query: any): Promise<any>
     }
 

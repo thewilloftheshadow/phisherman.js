@@ -34,8 +34,8 @@ class Phisherman {
      * @returns {boolean} Whether the URL is a phishing site
      */
 
-    getDomain(url) {
-        if (this.debug) console.debug(`Event: getDomain\n  - URL: ${url}`)
+    checkDomain(url) {
+        if (this.debug) console.debug(`Event: checkDomain\n  - URL: ${url}`)
         if (typeof url !== "string") throw new TypeError("url must be a string")
         const data = this._request(`/domains/${url}`)
         return data
