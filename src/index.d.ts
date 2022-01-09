@@ -12,6 +12,29 @@ declare module "Phisherman.js" {
         private _request(endpoint: string, method?: string, query: any): Promise<any>
     }
 
+    export class Domain {
+        public constructor(inputData: Object, url: string)
+        public url: string
+        public status: boolean
+        public verifiedPhish: boolean
+        public created: Date
+        public targetedBrand: string
+        public phishCaught: number
+        public firstSeen: Date
+        public lastSeen: Date
+        public lastChecked: Date
+        public phishTankId: number
+        public urlScanId: string
+        public websiteScreenshot: string
+        public ipAddress: string
+        public asn: string
+        public asnName: string
+        public route: string
+        public registry: string
+        public country: string
+        private readonly rawData: Object
+    }
+
     export class APIError extends Error {
         public constructor(response: any)
         public name: string

@@ -1,6 +1,6 @@
 {
     "name": "phisherman.js",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A node.js wrapper for the Phisherman API",
     "main": "src/index.js",
     "types": "src/index.d.ts",
@@ -22,14 +22,12 @@
     "bugs": {
         "url": "https://github.com/thewilloftheshadow/phisherman.js/issues"
     },
-    "homepage": "https://github.com/thewilloftheshadow/phisherman.js#readme",
+    "homepage": "https://phisherman.js.org",
     "devDependencies": {
         "docdash": "^1.2.0",
         "dotenv": "^10.0.0",
         "expect.js": "^0.3.1",
-        "minami": "^1.2.3",
         "mocha": "^9.1.0",
-        "taffydb": "^2.7.3",
         "typescript": "^4.4.2"
     },
     "dependencies": {
