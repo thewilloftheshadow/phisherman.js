@@ -1,12 +1,12 @@
 {
     "name": "phisherman.js",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "A node.js wrapper for the Phisherman API",
-    "main": "src/index.js",
-    "types": "src/index.d.ts",
+    "main": "dist/index.js",
     "scripts": {
-        "test": "mocha test.js",
-        "docs": "npx jsdoc ./src -r -d docs -t node_modules/docdash --readme README.md"
+        "build": "rimraf dist && tsc",
+        "docs": "typedoc",
+        "dev:docs": "npm run docs && cd docs && npx serve && cd .. && npx rimraf docs"
     },
     "repository": {
         "type": "git",
@@ -24,12 +24,25 @@
     },
     "homepage": "https://phisherman.js.org",
     "devDependencies": {
-        "docdash": "^1.2.0",
+        "@types/events": "^3.0.0",
+        "@types/ms": "^0.7.31",
+        "@types/node": "^17.0.23",
+        "@types/node-fetch": "^2.6.1",
+        "@types/shuffle-array": "^1.0.2",
+        "@types/update-notifier": "^5.1.0",
+        "@typescript-eslint/eslint-plugin": "^5.14.0",
+        "@typescript-eslint/parser": "^5.14.0",
         "dotenv": "^10.0.0",
+        "eslint": "^8.10.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-tsdoc": "^0.2.15",
         "expect.js": "^0.3.1",
         "mocha": "^9.1.0",
-        "taffydb": "^2.7.3",
-        "typescript": "^4.4.2"
+        "rimraf": "^3.0.2",
+        "typedoc": "^0.22.14",
+        "typedoc-plugin-missing-exports": "^0.22.6",
+        "typescript": "^4.6.2"
     },
     "dependencies": {
         "axios": "^0.21.1",
@@ -38,5 +51,8 @@
     },
     "engines": {
         "node": ">=14"
-    }
+    },
+    "files": [
+        "dist/*"
+    ]
 }
